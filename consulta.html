@@ -41,51 +41,52 @@
             <div class="tm-white-curve-left-circle"></div>
             <div class="tm-white-curve-text">
                 <h2 class="tm-section-header green-text">Contact Us</h2>
-                            <p>Quisque tincidunt ex sit amet metus ultricies, sed lobortis purus finibus. Morbi nex felis rutrum, faucibus odio sed, ullamcorper risus. Sed id condimentum nequq, at iaculis</p>
+                <p>Quisque tincidunt ex sit amet metus ultricies, sed lobortis purus finibus. Morbi nex felis rutrum,
+                    faucibus odio sed, ullamcorper risus. Sed id condimentum nequq, at iaculis</p>
 
-                            <h3 class="tm-section-subheader green-text">Our Address</h3>
-                            <address>
-                                110-220 Praesent consectetur, Dictum massa 10550
-                            </address>
-                            
-                            <div class="contact-info-links-container">
-                                <span class="green-text contact-info">
-                                	Tel: <a href="#" class="contact-info-link">010-020-0340</a></span>
-                                <span class="green-text contact-info">
-                                	Email: <a href="#" class="contact-info-link">info@company.com</a></span>    
-                            </div>
+                <h3 class="tm-section-subheader green-text">Our Address</h3>
+                <address>
+                    110-220 Praesent consectetur, Dictum massa 10550
+                </address>
+
+                <div class="contact-info-links-container">
+                    <span class="green-text contact-info">
+                        Tel: <a href="#" class="contact-info-link">010-020-0340</a></span>
+                    <span class="green-text contact-info">
+                        Email: <a href="#" class="contact-info-link">info@company.com</a></span>
+                </div>
             </div>
         </div>
 
         <div class="tm-home-right col-xs-12 col-sm-12 col-md-12 col-lg-5 col-xl-6">
             <h2 class="tm-section-header thin-font col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-8"
                 style="color: white;">Escríbenos</h2>
-            <form action="index.html" method="post" class="contact-form">
+            <div id="msg" class="contact-form">
 
                 <div class="col-xs-12 col-sm-8 col-md-8 col-lg-12 col-xl-12 tm-contact-form-right">
                     <div class="form-group">
-                        <input type="text" id="contact_name" name="contact_name" class="form-control" placeholder="Name"
-                            required />
+                        <input type="text" id="contact_name" name="contact_name" class="form-control"
+                            placeholder="Nombre" required v-model="from_name" />
                     </div>
                     <div class="form-group">
                         <input type="email" id="contact_email" name="contact_email" class="form-control"
-                            placeholder="Email" required />
+                            placeholder="Email" required v-model="from_email" />
                     </div>
                     <div class="form-group">
                         <input type="text" id="contact_subject" name="contact_subject" class="form-control"
-                            placeholder="Subject" required />
+                            placeholder="Asunto" required v-model="subject" />
                     </div>
                 </div>
                 <div class="col-xs-12 col-sm-8 col-md-8 col-lg-12 col-xl-12 tm-contact-form-left">
                     <div class="form-group">
                         <textarea id="contact_message" name="contact_message" class="form-control" rows="6"
-                            placeholder="Message" required></textarea>
+                            placeholder="Mensaje" required v-model="message"></textarea>
                     </div>
 
-                    <button type="submit" class="btn submit-btn">Send It Now</button>
+                    <button @click="enviar" type="" class="btn submit-btn">Enviar</button>
                 </div>
 
-            </form>
+            </div>
         </div>
 
         <!-- footer -->
@@ -154,6 +155,10 @@
 
 
     <!-- scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+    <script src="js/myVue.js"></script>
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/superfish.min.js"></script>
